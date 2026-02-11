@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jack Schafer | Security Operations Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0f172a; /* Dark Navy/Black */
+            --card-bg: #1e293b; /* Lighter Navy */
+            --accent: #38bdf8; /* Cyan */
+            --success: #22c55e; /* Green */
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* --- Header / HUD --- */
+        header {
+            border-bottom: 1px solid #334155;
+            padding: 2rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .identity h1 { margin: 0; font-size: 1.8rem; letter-spacing: 1px; }
+        .identity span { color: var(--accent); font-weight: bold; }
+        .role { color: var(--text-muted); font-size: 0.9rem; margin-top: 5px; }
+
+        .status-badge {
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--success);
+            padding: 5px 12px;
+            border-radius: 4px;
+            border: 1px solid var(--success);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- Main Content Grid --- */
+        .container {
+            padding: 3rem 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* --- Project Cards --- */
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+            border-color: var(--accent);
+        }
+
+        .card h3 { margin-top: 0; color: var(--text-main); }
+        .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+        
+        .tags {
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            background: #334155;
+            color: #cbd5e1;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-family: monospace;
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            color: var(--bg-color);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid #334155;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="identity">
+            <h1>JACK <span>SCHAFER</span></h1>
+            <div class="role">Director of Security Operations | vCISO | CISSP</div>
+        </div>
+        <div class="status-badge">
+            ● System Status: Operational
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="intro" style="margin-bottom: 3rem; max-width: 800px;">
+            <p style="font-size: 1.1rem; color: #cbd5e1;">
+                Specializing in Governance, Risk, and Compliance (GRC) and Security Operations. 
+                I build operational resilience by bridging the gap between technical controls and human behavior.
+                Below are selected assets demonstrating capability in reducing human risk and technical vulnerability.
+            </p>
+        </div>
+
+        <div class="section-title">Deployed Assets & Modules</div>
+
+        <div class="grid">
+            
+            <div class="card">
+                <div>
+                    <h3>ByteSized Security Training</h3>
+                    <div class="tags">
+                        <span class="tag">GAMIFICATION</span>
+                        <span class="tag">HTML5</span>
+                        <span class="tag">INTERACTIVE</span>
+                    </div>
+                    <p>
+                        A custom-built interactive security awareness module designed to increase engagement. 
+                        Features "The Training Arcade" integration for competitive learning mechanics.
+                    </p>
+                </div>
+                <a href="/ByteSized/" class="btn">Launch Simulation</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>Policy Framework: Remote Work</h3>
+                    <div class="tags">
+                        <span class="tag">GRC</span>
+                        <span class="tag">PDF</span>
+                        <span class="tag">ISO 27001</span>
+                    </div>
+                    <p>
+                        A sanitized version of a modern remote work policy framework, focusing on endpoint 
+                        security and diverse BYOD environments.
+                    </p>
+                </div>
+                <a href="#" class="btn">View Document</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <h3>Phishing Campaign Analysis</h3>
+                    <div class="tags">
+                        <span class="tag">VIDEO WALKTHROUGH</span>
+                        <span class="tag">SECOPS</span>
+                    </div>
+                    <p>
+                        A video case study detailing the design and execution of a simulated phishing campaign 
+                        that reduced click rates by 15% over two quarters.
+                    </p>
+                </div>
+                <a href="#" class="btn">Watch Analysis</a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Jack Schafer. Content sanitized for public viewing.</p>
+        <p>Located in Maine | Available for vCISO Engagement</p>
+    </footer>
+
+</body>
+</html>
