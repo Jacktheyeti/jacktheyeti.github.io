@@ -1,0 +1,64 @@
+# ============================================================================
+# ByteSized Curriculum Configuration
+# Edit this file to update module content, add new modules, or lock future ones.
+# ============================================================================
+
+module:
+  name: "ByteSized"
+  title: "ByteSized Curriculum"
+  tagline: "Micro-learning modules designed to reduce human risk through gamified interaction."
+  back_link: "../"
+
+# ============================================================================
+# Modules — Each entry renders as a card on the curriculum page
+# and drives the content on the individual module detail pages.
+# Set locked: true for future/unreleased modules.
+# ============================================================================
+modules:
+  - id: "01"
+    slug: intro
+    title: "Security Training Sucks. We're Fixing it."
+    short_title: "Intro"
+    tag: "Module 01 • Intro"
+    card_desc: "Security Training Sucks. We're fixing it."
+    description: "Security is a lifestyle, not a lunch-and-learn. My goal with the first module was to bridge the gap between home safety and office security, thereby lowering the barrier to entry for employee engagement. Not only was there 110% engagement rate with the module compared to the training last year, but many team member reached out exclaiming they were 'actually excited' to see what was next and that they 'actually learned something valuable'."
+    duration: "4 mins"
+    format: "Interactive Checklist"
+    engagement: "110%"
+    iframe_src: "https://mb.elb.studio/share/Tqyhbhk7pPycWJRSAF9Qev9z"
+    locked: false
+    objectives:
+      - title: "Establish Foundational Hygiene"
+        detail: "Empower team members to implement baseline security habits, such as identifying password reuse and adopting professional password management tools."
+      - title: "Master Physical and Digital Access"
+        detail: "Standardize the habit of securing workstations through screen locking and environmental awareness, ensuring the Least Privilege principle begins at the desk."
+      - title: "Proactive Lifecycle Management"
+        detail: "Shift the responsibility of system maintenance to the user by emphasizing the importance of immediate OS patching and local data cleanup."
+      - title: "Cultivate Reporting Instincts"
+        detail: "Neutralize the fear associated with reporting by framing the Security Snitch as a vital team player who protects the collective from cover-up risks."
+
+  - id: "02"
+    slug: phishing
+    title: "Phishing & Social Engineering"
+    short_title: "Phishing"
+    tag: "Module 02 • Phishing"
+    card_desc: "Clicking stuff is why we can't have nice things."
+    description: "Passive watching doesn't build muscle memory. I simulated a high-stakes situation that empowered users to explore failure in a safe environment. Leveraging the Scenarios game from The Training Arcade, I created a branching game where users could explore and understand the consequences of their choices without risking real-world assets. Participation was incentivized with the opportunity to be selected to join the Security Team in creating a phishing simulation which created a unique opportunity to breakdown the all to common us vs. them dynamic between security teams and the rest of the organization while providing the winner with an adversary mindset."
+    duration: "4 mins"
+    format: "Gamification"
+    engagement: "TBD"
+    iframe_src: "https://tga.thetrainingarcade.com/games/scenarios/byte-sized-public"
+    locked: false
+    objectives:
+      - title: "Adversary Mindset Through Design"
+        detail: "By designing a phish, the winner gains a deep understanding of the Urgency Traps and Close-Enough sender tactics outlined in Company Policy."
+      - title: "Human Sensor Development"
+        detail: "They learn to think like an adversary, which naturally sharpens their ability to spot red flags in their own inbox—transforming them from a potential target into a high-functioning human sensor."
+      - title: "Engagement Through Agency"
+        detail: "It provides a rare, legal opportunity to hack their boss or coworkers, replacing the usual anxiety of security training with a sense of fun and agency."
+      - title: "Cross-Functional Realism"
+        detail: "Technical professionals often struggle to write phishes that sound like real Sales or Marketing emails. A Guest Villain from those departments provides the intel needed to create more realistic, high-fidelity simulations."
+      - title: "Breaking Down Silos"
+        detail: "This collaboration breaks down the us vs. them barrier. It shifts the perception of the Security Team from an enforcement only body to a group of peers who work alongside the staff to fix the incident together."
+      - title: "Behavioral Insight for IR"
+        detail: "Working with a non-technical peer gives the Security Team direct insight into how employees perceive risks, allowing us to refine our Incident Management response templates based on actual human psychology."

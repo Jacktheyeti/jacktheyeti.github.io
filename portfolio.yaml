@@ -1,0 +1,51 @@
+# ============================================================================
+# Portfolio Content Configuration
+# Edit this file to update all content on the main portfolio page.
+# ============================================================================
+
+site:
+  name: "Jack Schafer"
+  role: "Director of Security Operations | vCISO | CISSP"
+  intro: "Specializing in Governance, Risk, and Compliance (GRC) and Security Operations. I build operational resilience by bridging the gap between technical controls and human behavior. Below are selected assets demonstrating capability in reducing human risk and technical vulnerability."
+
+# ============================================================================
+# Section 1: Strategic Initiatives & Case Studies
+# High-level programs and campaigns that demonstrate leadership impact.
+# ============================================================================
+sections:
+  section1: "Strategic Initiatives & Case Studies"
+  section2: "Technical Artifacts & Tools"
+
+initiatives:
+  - id: bytesized
+    title: "ByteSized Security Training"
+    tags: ["GAMIFICATION", "HTML5", "INTERACTIVE"]
+    description: 'A custom-built interactive security awareness module designed to increase engagement. Features "The Training Arcade" integration for competitive learning mechanics.'
+    link: "/ByteSized/"
+    link_label: "Launch Simulation"
+
+  - id: phishing-analysis
+    title: "Phishing Campaign Analysis"
+    tags: ["VIDEO WALKTHROUGH", "SECOPS"]
+    description: "A video case study detailing the design and execution of a simulated phishing campaign that reduced click rates by 15% over two quarters."
+    link: "#"
+    link_label: "Watch Analysis"
+
+# ============================================================================
+# Section 2: Technical Artifacts & Tools
+# Tangible deliverables — policies, frameworks, tools, and technical outputs.
+# ============================================================================
+projects:
+  - id: policy-framework
+    title: "Policy Framework: Remote Work"
+    tags: ["GRC", "PDF", "ISO 27001"]
+    description: "A sanitized version of a modern remote work policy framework, focusing on endpoint security and diverse BYOD environments."
+    link: "#"
+    link_label: "View Document"
+
+# ============================================================================
+# Footer
+# ============================================================================
+footer:
+  copyright: "© 2026 Jack Schafer. Content sanitized for public viewing."
+  location: "Located in Maine | Available for vCISO Engagement"

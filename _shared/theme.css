@@ -1,0 +1,474 @@
+/* ==========================================================================
+   Portfolio Design System — Unified Theme
+   Shared across jacktheyeti.github.io and all portfolio modules.
+   ========================================================================== */
+
+/* --- Design Tokens --- */
+:root {
+    /* Core Palette */
+    --bg:          #0f172a;
+    --card-bg:     #1e293b;
+    --border:      #334155;
+    --accent:      #38bdf8;
+    --success:     #22c55e;
+
+    /* Typography */
+    --text-main:   #f1f5f9;
+    --text-muted:  #94a3b8;
+    --text-light:  #cbd5e1;
+    --font-main:   'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+    /* Spacing */
+    --space-xs:    0.5rem;
+    --space-sm:    1rem;
+    --space-md:    1.5rem;
+    --space-lg:    2rem;
+    --space-xl:    3rem;
+
+    /* Borders */
+    --radius-sm:   4px;
+    --radius-md:   8px;
+    --radius-lg:   12px;
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--text-main);
+}
+
+/* --- Layout --- */
+.container {
+    padding: var(--space-xl) 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-lg);
+}
+
+.grid--wide {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+}
+
+/* --- Header / HUD --- */
+.site-header {
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-lg) 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.identity h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.identity span {
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.role {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.status-badge {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--success);
+    padding: 5px 12px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--success);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Section Titles --- */
+.section-title {
+    border-left: 4px solid var(--accent);
+    padding-left: 15px;
+    margin-bottom: var(--space-lg);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* --- Intro Block --- */
+.intro {
+    margin-bottom: var(--space-xl);
+    max-width: 800px;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+/* --- Cards --- */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--text-main);
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-md);
+}
+
+/* --- Module Cards (ByteSized curriculum) --- */
+.module-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease;
+}
+
+.module-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.module-card-header {
+    height: 140px;
+    background: linear-gradient(135deg, var(--card-bg) 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.module-number {
+    font-size: 4rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.05);
+    position: absolute;
+    right: 20px;
+    bottom: -10px;
+    line-height: 1;
+}
+
+.module-icon-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.module-card-body {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.module-card .title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: white;
+}
+
+.module-card .desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+/* Locked / Future modules */
+.module-card.locked {
+    opacity: 0.6;
+    pointer-events: none;
+    border-style: dashed;
+}
+
+.module-card.locked .module-card-header {
+    background: #161f30;
+}
+
+.module-card.locked .module-icon-text {
+    color: var(--text-muted);
+}
+
+.module-card.locked .btn {
+    background: var(--border);
+    border-color: var(--border);
+    color: var(--text-muted);
+}
+
+/* --- Tags --- */
+.tags {
+    margin-bottom: var(--space-md);
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: var(--border);
+    color: var(--text-light);
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-family: monospace;
+}
+
+.tag--accent {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: var(--font-main);
+    padding: 4px 10px;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+.btn--filled {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    color: var(--bg);
+    border-radius: var(--radius-md);
+}
+
+.btn--filled:hover {
+    background: transparent;
+    color: var(--accent);
+}
+
+/* --- Navigation --- */
+.nav-back {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+    transition: color 0.2s;
+}
+
+.nav-back:hover {
+    color: var(--accent);
+}
+
+.breadcrumb {
+    width: 100%;
+    max-width: 1800px;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* --- Module Page Header --- */
+.module-header {
+    margin-bottom: 60px;
+    max-width: 800px;
+}
+
+.module-header h1 {
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+    letter-spacing: -1px;
+}
+
+.module-header p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* --- Module Detail Page (meta grid + cinema) --- */
+.meta-grid {
+    width: 100%;
+    max-width: 1800px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 60px;
+    margin-bottom: 50px;
+}
+
+.meta-grid h1 {
+    margin: 0 0 20px 0;
+    font-size: 2rem;
+    letter-spacing: -1px;
+}
+
+.meta-grid h2 {
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-top: 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.meta-grid ul {
+    line-height: 1.8;
+    color: var(--text-light);
+    padding-left: 20px;
+}
+
+.meta-grid li {
+    margin-bottom: 10px;
+}
+
+.meta-grid p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.meta-grid strong {
+    color: white;
+}
+
+/* --- Cinema Mode Game Container --- */
+.game-container {
+    width: 100%;
+    max-width: 1800px;
+    height: 80vh;
+    background: #000;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+.game-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* --- Footer --- */
+.site-footer {
+    text-align: center;
+    padding: var(--space-xl);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    margin-top: 4rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1200px) {
+    .game-container {
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    .meta-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: var(--space-sm) 5%;
+    }
+
+    .container {
+        padding: var(--space-lg) 5%;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Utility: centered body for module pages --- */
+.body--centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}

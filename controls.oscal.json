@@ -1,0 +1,135 @@
+{
+  "component-definition": {
+    "uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "metadata": {
+      "title": "Jack Schafer Portfolio — Security Control Mappings",
+      "last-modified": "2026-02-13T16:45:00-05:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "roles": [
+        {
+          "id": "portfolio-owner",
+          "title": "Portfolio Owner",
+          "description": "GRC practitioner responsible for control implementation evidence"
+        }
+      ],
+      "parties": [
+        {
+          "uuid": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+          "type": "person",
+          "name": "Jack Schafer",
+          "remarks": "Director of Security Operations | vCISO | CISSP"
+        }
+      ]
+    },
+    "components": [
+      {
+        "uuid": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+        "type": "service",
+        "title": "ByteSized Security Awareness Training",
+        "description": "A custom-built interactive security awareness program using gamification and micro-learning to reduce human risk. Modules cover foundational security hygiene, phishing and social engineering defense, and cultivate a security-first culture.",
+        "purpose": "Reduce organizational human risk through engaging, measurable security awareness training that exceeds traditional compliance-driven approaches.",
+        "control-implementations": [
+          {
+            "uuid": "d4e5f6a7-b8c9-0123-defa-234567890123",
+            "source": "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final",
+            "description": "NIST SP 800-53 Rev 5 Control Implementation",
+            "implemented-requirements": [
+              {
+                "uuid": "e5f6a7b8-c9d0-1234-efab-345678901234",
+                "control-id": "AT-2",
+                "description": "Literacy Training and Awareness — ByteSized provides role-based security awareness training through interactive modules covering password hygiene, physical security, social engineering, and incident reporting. Engagement rates exceed 100% of baseline through gamification."
+              },
+              {
+                "uuid": "f6a7b8c9-d0e1-2345-fabc-456789012345",
+                "control-id": "AT-3",
+                "description": "Role-Based Training — Modules are designed with progressive complexity, allowing tailored delivery based on job function and risk exposure level."
+              },
+              {
+                "uuid": "a7b8c9d0-e1f2-3456-abcd-567890123456",
+                "control-id": "AT-4",
+                "description": "Training Records — Module engagement metrics (completion rates, time-on-task, gamification scores) provide auditable evidence of training delivery and effectiveness."
+              }
+            ]
+          },
+          {
+            "uuid": "b8c9d0e1-f2a3-4567-bcde-678901234567",
+            "source": "https://www.iso.org/standard/27001",
+            "description": "ISO 27001:2022 Control Implementation",
+            "implemented-requirements": [
+              {
+                "uuid": "c9d0e1f2-a3b4-5678-cdef-789012345678",
+                "control-id": "A.6.3",
+                "description": "Information Security Awareness, Education and Training — ByteSized delivers awareness training that is contextual, engaging, and measurable, supporting continuous improvement of the organization's security posture."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "d0e1f2a3-b4c5-6789-defa-890123456789",
+        "type": "policy",
+        "title": "Remote Work Security Policy Framework",
+        "description": "A comprehensive remote work policy framework addressing endpoint security, BYOD environments, and secure access requirements for distributed workforces.",
+        "purpose": "Establish governance controls for remote work scenarios that balance security requirements with operational flexibility.",
+        "control-implementations": [
+          {
+            "uuid": "e1f2a3b4-c5d6-7890-efab-901234567890",
+            "source": "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final",
+            "description": "NIST SP 800-53 Rev 5 Control Implementation",
+            "implemented-requirements": [
+              {
+                "uuid": "f2a3b4c5-d6e7-8901-fabc-012345678901",
+                "control-id": "AC-17",
+                "description": "Remote Access — Policy defines acceptable remote access methods, authentication requirements, and monitoring obligations for remote workers."
+              },
+              {
+                "uuid": "a3b4c5d6-e7f8-9012-abcd-123456789012",
+                "control-id": "AC-19",
+                "description": "Access Control for Mobile Devices — BYOD provisions establish minimum security standards for personal devices accessing organizational resources."
+              }
+            ]
+          },
+          {
+            "uuid": "b4c5d6e7-f8a9-0123-bcde-234567890123",
+            "source": "https://www.iso.org/standard/27001",
+            "description": "ISO 27001:2022 Control Implementation",
+            "implemented-requirements": [
+              {
+                "uuid": "c5d6e7f8-a9b0-1234-cdef-345678901234",
+                "control-id": "A.6.7",
+                "description": "Remote Working — Policy framework provides controls and guidelines for securing information accessed, processed, or stored at remote working sites."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "uuid": "d6e7f8a9-b0c1-2345-defa-456789012345",
+        "type": "service",
+        "title": "Phishing Campaign Analysis & Simulation Program",
+        "description": "A structured phishing simulation program that designs, executes, and analyzes simulated phishing campaigns to measure and reduce organizational susceptibility to social engineering attacks.",
+        "purpose": "Quantifiably reduce phishing click rates through iterative simulation campaigns and targeted follow-up training.",
+        "control-implementations": [
+          {
+            "uuid": "e7f8a9b0-c1d2-3456-efab-567890123456",
+            "source": "https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final",
+            "description": "NIST SP 800-53 Rev 5 Control Implementation",
+            "implemented-requirements": [
+              {
+                "uuid": "f8a9b0c1-d2e3-4567-fabc-678901234567",
+                "control-id": "AT-2(3)",
+                "description": "Social Engineering and Mining — Phishing simulations provide practical exercises that train personnel to recognize and report social engineering attempts, with measurable 15% reduction in click rates over two quarters."
+              },
+              {
+                "uuid": "a9b0c1d2-e3f4-5678-abcd-789012345678",
+                "control-id": "CA-8",
+                "description": "Penetration Testing — Simulated phishing campaigns serve as a form of social engineering penetration testing, identifying human-layer vulnerabilities."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
