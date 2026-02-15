@@ -15,11 +15,17 @@ sections:
 initiatives:
   - id: iso27001
     title: "Operationalizing ISO 27001"
-    tags: ["CHANGE MANAGEMENT", "GRC", "SecOps"]
+    tags: ["CHANGE MANAGEMENT", "GRC", "SECOPS"]
     description: 'Transformed a stalled, 12 month compliance initiative into a functional security program. Bridged the gap between siloed teams and ISO requirements to start the PDCA cycle.'
     link: "/iso27001/"
     link_label: "View Case Study"
 
+  - id: soc2
+    title: "Crisis-Resilient SOC 2 Type II"
+    tags: ["CRISIS LEADERSHIP", "SOC 2", "TEAM CULTURE"]
+    description: 'Led a diminished team through a high-stakes audit immediately following the loss of the CTO. Achieved a zero exception report on the first attempt by prioritizing morale and operational shielding.'
+    link: "/soc2/"
+    link_label: "View Case Study"
 projects:
   - id: bytesized
     title: "ByteSized Security Training"
