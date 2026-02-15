@@ -355,6 +355,50 @@ const PortfolioRenderer = (() => {
         }
     }
 
+    function renderCaseStudy(data) {
+        const meta = data.meta || {};
+        const sections = data.sections || [];
+
+        // Back nav
+        const navEl = document.getElementById('cs-nav');
+        if (navEl) {
+            navEl.innerHTML = `<a href="${escapeHTML(meta.back_link || '../')}" class="nav-back">${escapeHTML(meta.back_label || '← Back')}</a>`;
+        }
+
+        // Header
+        const headerEl = document.getElementById('cs-header');
+        if (headerEl) {
+            headerEl.innerHTML = `
+                <h1>${escapeHTML(meta.title || '')}</h1>
+                <p class="case-study__subtitle">${escapeHTML(meta.subtitle || '')}</p>
+            `;
+        }
+
+        // Body sections
+        const bodyEl = document.getElementById('cs-body');
+        if (bodyEl) {
+            bodyEl.innerHTML = sections.map(section => {
+                const paragraphs = (section.paragraphs || []).map(p => {
+                    const cls = p.highlight ? ' case-study__paragraph--highlight' : '';
+                    return `
+                        <div class="case-study__paragraph${cls}">
+                            <h3>${escapeHTML(p.heading || '')}</h3>
+                            <p>${escapeHTML(p.body || '')}</p>
+                        </div>
+                    `;
+                }).join('');
+
+                return `
+                    <section class="case-study__section" id="section-${escapeHTML(section.id || '')}">
+                        <div class="case-study__phase">${escapeHTML(section.phase || '')}</div>
+                        <h2>${escapeHTML(section.title || '')}</h2>
+                        ${paragraphs}
+                    </section>
+                `;
+            }).join('');
+        }
+    }
+
     // ─── Public API ─────────────────────────────────────────────────────
 
     async function init(options = {}) {
@@ -385,6 +429,9 @@ const PortfolioRenderer = (() => {
                     break;
                 case 'module':
                     renderModuleDetail(data, moduleId);
+                    break;
+                case 'case-study':
+                    renderCaseStudy(data);
                     break;
                 default:
                     console.warn(`[PortfolioRenderer] Unknown page type: ${page}`);

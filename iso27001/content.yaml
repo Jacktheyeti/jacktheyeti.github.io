@@ -1,0 +1,53 @@
+# ============================================================================
+# ISO 27001 Case Study — Content Configuration
+# All narrative content for the case study page.
+# ============================================================================
+
+meta:
+  title: "Accelerating ISO 27001"
+  subtitle: "Operationalizing Compliance in a Stalled Environment"
+  back_link: "../"
+  back_label: "← Back to Portfolio"
+
+# ============================================================================
+# Sections — Each renders as a narrative block on the page
+# ============================================================================
+sections:
+  - id: challenge
+    phase: "01"
+    title: "The Challenge: The Year of Spin"
+    paragraphs:
+      - heading: "Context"
+        body: "Following an acquisition, I stepped into an ongoing ISO 27001:2022 initiative that had been active for 12 months."
+      - heading: "The Friction"
+        body: "Despite a year of effort, the project was stalled. The team was siloed, frustrated, and suffering from compliance fatigue."
+      - heading: "The Gap"
+        body: "The initiative was being led by DevOps engineers — highly technical talent that was bogged down by the administrative weight of ISO requirements, lacking the project management structure to make efficient progress."
+      - heading: "Personal Constraint"
+        body: 'As the "new guy" post-acquisition, I had no initial social capital and needed to learn the specific ISO 27001:2022 framework rapidly while building trust.'
+
+  - id: intervention
+    phase: "02"
+    title: "The Intervention: Listen, Align, Then Lead"
+    paragraphs:
+      - heading: "Phase 1 — Observation & Empathy"
+        body: "Instead of asserting immediate authority, I joined calls strictly to listen. I identified that the engineers viewed compliance as an obstruction rather than a process."
+      - heading: "Phase 2 — Value-First Leadership"
+        body: 'I bridged the gap between "DevOps culture" and "Audit requirements." I introduced lightweight Project Management (PM) principles to de-conflict their schedules.'
+      - heading: "Key Win"
+        body: "I didn't tell them what to do; I helped them organize how they did it. This bought me the trust required to lead."
+        highlight: true
+      - heading: "Phase 3 — Operationalizing the PDCA Cycle"
+        body: "Once trust was established, I took ownership of the program. We moved from theoretical discussions to implementing key controls and scheduling internal audits, effectively jumpstarting the Plan-Do-Check-Act (PDCA) cycle required by the standard."
+
+  - id: outcome
+    phase: "03"
+    title: "The Outcome: Velocity over Vanity"
+    paragraphs:
+      - heading: "The Metric"
+        body: "In just a few months, the team achieved more tangible progress on controls and audit readiness than in the previous year combined."
+      - heading: "The Pivot"
+        body: "Ultimately, business priorities shifted, and the executive team halted the certification pursuit."
+      - heading: "The Takeaway"
+        body: "While the badge was not achieved, the capability was built. I successfully transformed a frustrated, stalled engineering cohort into a cohesive unit capable of executing complex governance frameworks. We proved that security governance doesn't have to be the enemy of engineering velocity."
+        highlight: true
