@@ -5,7 +5,7 @@
  * content into placeholder elements. No build step, no framework.
  * 
  * Usage:
- *   <script src="../_shared/renderer.js"></script>
+ *   <script src="../shared/renderer.js"></script>
  *   <script>
  *     PortfolioRenderer.init({ config: 'portfolio.yaml', page: 'home' });
  *   </script>
