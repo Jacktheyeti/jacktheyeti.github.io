@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Jack Schafer</title>
+    <meta name="description"
+        content="Strategic security initiatives, case studies, and technical artifacts by Jack Schafer.">
+    <link rel="stylesheet" href="../shared/theme.css">
+</head>
+
+<body>
+
+    <nav id="site-nav">
+        <!-- Rendered by renderer.js -->
+    </nav>
+
+    <div class="container">
+
+        <h1 class="projects-header">Projects</h1>
+
+        <div class="tag-filter" id="tag-filter">
+            <!-- Rendered by renderer.js -->
+        </div>
+
+        <div class="grid grid--three" id="projects-grid">
+            <!-- Rendered from portfolio.yaml -->
+        </div>
+
+    </div>
+
+    <footer class="site-footer" id="site-footer">
+        <!-- Rendered from portfolio.yaml -->
+    </footer>
+
+    <script src="../shared/renderer.js"></script>
+    <script>
+        PortfolioRenderer.init({ config: '../portfolio.yaml', page: 'home' });
+    </script>
+
+</body>
+
+</html>

@@ -192,6 +192,32 @@ const PortfolioRenderer = (() => {
         return div.innerHTML;
     }
 
+    // ─── Navigation ─────────────────────────────────────────────────────
+
+    function renderNav(activePage, data) {
+        const navEl = document.getElementById('site-nav');
+        if (!navEl) return;
+
+        const nav = (data && data.nav) || {};
+        const links = nav.links || [
+            { label: 'About', href: '/' },
+            { label: 'Portfolio', href: '/portfolio/' }
+        ];
+
+        const linksHTML = links.map(link => {
+            const active = link.label.toLowerCase() === (activePage || '').toLowerCase()
+                ? ' site-nav__link--active' : '';
+            return `<a href="${escapeHTML(link.href)}" class="site-nav__link${active}">${escapeHTML(link.label)}</a>`;
+        }).join('');
+
+        navEl.innerHTML = `
+            <div class="site-nav__inner">
+                <a href="/" class="site-nav__brand">JS</a>
+                <div class="site-nav__links">${linksHTML}</div>
+            </div>
+        `;
+    }
+
     function _renderCardGrid(items) {
         return items.map(item => {
             const tagsHTML = (item.tags || [])
@@ -211,54 +237,175 @@ const PortfolioRenderer = (() => {
     }
 
     function renderHome(data) {
-        const site = data.site || {};
-        const sections = data.sections || {};
-        const initiatives = data.initiatives || [];
         const projects = data.projects || [];
         const footer = data.footer || {};
 
-        // Header (no status badge)
-        const headerEl = document.getElementById('site-header');
-        if (headerEl) {
-            const nameParts = (site.name || '').split(' ');
+        // Navigation
+        renderNav('portfolio', data);
+
+        // Tag Filter
+        const filterEl = document.getElementById('tag-filter');
+        if (filterEl) {
+            const allTags = [...new Set(projects.flatMap(p => p.tags || []))];
+            filterEl.innerHTML = `
+                <button class="tag-filter__btn tag-filter__btn--active" data-tag="all">All</button>
+                ${allTags.map(tag => `<button class="tag-filter__btn" data-tag="${escapeHTML(tag)}">${escapeHTML(tag)}</button>`).join('')}
+            `;
+
+            filterEl.addEventListener('click', (e) => {
+                const btn = e.target.closest('.tag-filter__btn');
+                if (!btn) return;
+                const tag = btn.dataset.tag;
+
+                // Update active state
+                filterEl.querySelectorAll('.tag-filter__btn').forEach(b => b.classList.remove('tag-filter__btn--active'));
+                btn.classList.add('tag-filter__btn--active');
+
+                // Filter cards
+                const cards = document.querySelectorAll('#projects-grid .card');
+                cards.forEach(card => {
+                    if (tag === 'all') {
+                        card.style.display = '';
+                    } else {
+                        const cardTags = (card.dataset.tags || '').split(',');
+                        card.style.display = cardTags.includes(tag) ? '' : 'none';
+                    }
+                });
+            });
+        }
+
+        // Projects Grid (unified)
+        const gridEl = document.getElementById('projects-grid');
+        if (gridEl) {
+            gridEl.innerHTML = projects.map(item => {
+                const tagsStr = (item.tags || []).join(',');
+                const tagsHTML = (item.tags || [])
+                    .map(t => `<span class="tag">${escapeHTML(t)}</span>`)
+                    .join('');
+                return `
+                    <div class="card" data-tags="${escapeHTML(tagsStr)}">
+                        <div>
+                            <h3>${escapeHTML(item.title || '')}</h3>
+                            <div class="tags">${tagsHTML}</div>
+                            <p>${escapeHTML(item.description || '')}</p>
+                        </div>
+                        <a href="${escapeHTML(item.link || '#')}" class="btn">${escapeHTML(item.link_label || 'View')}</a>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Footer
+        const footerEl = document.getElementById('site-footer');
+        if (footerEl) {
+            footerEl.innerHTML = `
+                <p>${escapeHTML(footer.copyright || '')}</p>
+                <p>${escapeHTML(footer.location || '')}</p>
+            `;
+        }
+    }
+
+    // ─── About Page ─────────────────────────────────────────────────────
+
+    function renderAbout(data) {
+        const profile = data.profile || {};
+        const intro = data.intro || '';
+        const accomplishments = data.accomplishments || [];
+        const timeline = data.timeline || [];
+        const footer = data.footer || {};
+
+        // Navigation
+        renderNav('about', data);
+
+        // Profile Section
+        const profileEl = document.getElementById('profile');
+        if (profileEl) {
+            const nameParts = (profile.name || '').split(' ');
             const firstName = nameParts[0] || '';
             const lastName = nameParts.slice(1).join(' ') || '';
-            headerEl.innerHTML = `
-                <div class="identity">
-                    <h1>${escapeHTML(firstName)} <span>${escapeHTML(lastName)}</span></h1>
-                    <div class="role">${escapeHTML(site.role || '')}</div>
+
+            const photoHTML = profile.photo
+                ? `<img src="${escapeHTML(profile.photo)}" alt="${escapeHTML(profile.name)}" class="profile__photo">`
+                : `<div class="profile__photo profile__photo--placeholder">${escapeHTML(firstName.charAt(0))}${escapeHTML(lastName.charAt(0))}</div>`;
+
+            const credBadge = profile.credentials
+                ? `<span class="profile__credential">${escapeHTML(profile.credentials)}</span>` : '';
+
+            const locationHTML = profile.location
+                ? `<div class="profile__location"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> ${escapeHTML(profile.location)}</div>` : '';
+
+            let actionsHTML = '';
+            if (profile.email) {
+                actionsHTML += `<a href="mailto:${escapeHTML(profile.email)}" class="btn profile__btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    Contact
+                </a>`;
+            }
+            if (profile.resume && profile.resume !== '#') {
+                actionsHTML += `<a href="${escapeHTML(profile.resume)}" class="btn profile__btn" target="_blank" rel="noopener">View Resume</a>`;
+            }
+            if (profile.linkedin) {
+                actionsHTML += `<a href="${escapeHTML(profile.linkedin)}" class="btn profile__btn" target="_blank" rel="noopener">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
+                </a>`;
+            }
+
+            profileEl.innerHTML = `
+                <div class="profile__inner">
+                    ${photoHTML}
+                    <div class="profile__content">
+                        <h1 class="profile__name">${escapeHTML(firstName)} <span>${escapeHTML(lastName)}</span></h1>
+                        <div class="profile__title">${escapeHTML(profile.title || '')} ${credBadge}</div>
+                        ${profile.company ? `<div class="profile__company">${escapeHTML(profile.company)}</div>` : ''}
+                        ${locationHTML}
+                        <div class="profile__actions">${actionsHTML}</div>
+                    </div>
                 </div>
             `;
         }
 
         // Intro
-        const introEl = document.getElementById('site-intro');
-        if (introEl && site.intro) {
-            introEl.innerHTML = `<p>${escapeHTML(site.intro)}</p>`;
+        const introEl = document.getElementById('about-intro');
+        if (introEl && intro) {
+            introEl.innerHTML = `<p>${escapeHTML(intro)}</p>`;
         }
 
-        // Section 1 Title
-        const s1Title = document.getElementById('section1-title');
-        if (s1Title && sections.section1) {
-            s1Title.textContent = sections.section1;
+        // Accomplishments
+        const accGrid = document.getElementById('accomplishments-grid');
+        if (accGrid) {
+            accGrid.innerHTML = accomplishments.map(acc => `
+                <div class="accomplishment">
+                    <span class="accomplishment__metric">${escapeHTML(acc.metric || '')}</span>
+                    <span class="accomplishment__label">${escapeHTML(acc.label || '')}</span>
+                    <span class="accomplishment__desc">${escapeHTML(acc.description || '')}</span>
+                    <a href="${escapeHTML(acc.link || '#')}" class="accomplishment__link">${escapeHTML(acc.link_label || 'Review Project →')}</a>
+                </div>
+            `).join('');
         }
 
-        // Section 1: Initiatives
-        const initGrid = document.getElementById('initiatives-grid');
-        if (initGrid) {
-            initGrid.innerHTML = _renderCardGrid(initiatives);
-        }
+        // Timeline
+        const timelineEl = document.getElementById('timeline');
+        if (timelineEl) {
+            timelineEl.innerHTML = timeline.map((entry, idx) => {
+                const highlights = (entry.highlights || []).map(h =>
+                    `<li>${escapeHTML(h)}</li>`
+                ).join('');
+                const side = idx % 2 === 0 ? 'timeline__entry--left' : 'timeline__entry--right';
 
-        // Section 2 Title
-        const s2Title = document.getElementById('section2-title');
-        if (s2Title && sections.section2) {
-            s2Title.textContent = sections.section2;
-        }
-
-        // Section 2: Projects
-        const gridEl = document.getElementById('projects-grid');
-        if (gridEl) {
-            gridEl.innerHTML = _renderCardGrid(projects);
+                return `
+                    <div class="timeline__entry ${side}" style="animation-delay: ${idx * 0.1}s">
+                        <div class="timeline__marker"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__date">${escapeHTML(entry.dates || '')}</div>
+                            <h3 class="timeline__title">${escapeHTML(entry.title || '')}</h3>
+                            ${entry.company ? `<div class="timeline__company">${escapeHTML(entry.company)}</div>` : ''}
+                            ${entry.story ? `<p class="timeline__story">${escapeHTML(entry.story)}</p>` : ''}
+                            ${highlights ? `<ul class="timeline__highlights">${highlights}</ul>` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
         }
 
         // Footer
@@ -359,10 +506,19 @@ const PortfolioRenderer = (() => {
         const meta = data.meta || {};
         const sections = data.sections || [];
 
+        // Global nav
+        renderNav(null, data);
+
         // Back nav
         const navEl = document.getElementById('cs-nav');
         if (navEl) {
-            navEl.innerHTML = `<a href="${escapeHTML(meta.back_link || '../')}" class="nav-back">${escapeHTML(meta.back_label || '← Back')}</a>`;
+            navEl.innerHTML = `<a href="${escapeHTML(meta.back_link || '../portfolio/')}" class="nav-back">${escapeHTML(meta.back_label || '← Back to Projects')}</a>`;
+        }
+
+        // Hero Image
+        const heroImgEl = document.getElementById('cs-hero-image');
+        if (heroImgEl && meta.hero_image) {
+            heroImgEl.innerHTML = `<img src="${escapeHTML(meta.hero_image)}" alt="${escapeHTML(meta.title || '')}" class="cs-hero__img">`;
         }
 
         // Header
@@ -370,11 +526,26 @@ const PortfolioRenderer = (() => {
         if (headerEl) {
             headerEl.innerHTML = `
                 <h1>${escapeHTML(meta.title || '')}</h1>
-                <p class="case-study__subtitle">${escapeHTML(meta.subtitle || '')}</p>
             `;
         }
 
-        // Body sections
+        // Hero Statement
+        const heroStmtEl = document.getElementById('cs-hero-statement');
+        if (heroStmtEl && meta.hero_statement) {
+            heroStmtEl.innerHTML = `<p>${escapeHTML(meta.hero_statement)}</p>`;
+        }
+
+        // Tags
+        const tagsEl = document.getElementById('cs-tags');
+        if (tagsEl && meta.tags) {
+            const tags = meta.tags || [];
+            tagsEl.innerHTML = tags.map(t => `<span class="tag tag--accent">${escapeHTML(t)}</span>`).join('');
+        }
+
+        // STAR Sections
+        const starLabels = { situation: 'S', task: 'T', action: 'A', result: 'R' };
+        const starNames = { situation: 'Situation', task: 'Task', action: 'Action', result: 'Result' };
+
         const bodyEl = document.getElementById('cs-body');
         if (bodyEl) {
             bodyEl.innerHTML = sections.map(section => {
@@ -388,14 +559,28 @@ const PortfolioRenderer = (() => {
                     `;
                 }).join('');
 
+                const sectionId = (section.id || '').toLowerCase();
+                const starLetter = starLabels[sectionId] || '';
+                const starName = starNames[sectionId] || section.title || '';
+                const displayTitle = starLetter ? section.title || starName : section.title || '';
+
                 return `
-                    <section class="case-study__section" id="section-${escapeHTML(section.id || '')}">
-                        <div class="case-study__phase">${escapeHTML(section.phase || '')}</div>
-                        <h2>${escapeHTML(section.title || '')}</h2>
+                    <section class="case-study__section case-study__section--star" id="section-${escapeHTML(section.id || '')}">
+                        ${starLetter ? `<div class="cs-star-label">${escapeHTML(starLetter)}</div>` : `<div class="case-study__phase">${escapeHTML(section.phase || '')}</div>`}
+                        <h2>${escapeHTML(displayTitle)}</h2>
                         ${paragraphs}
                     </section>
                 `;
             }).join('');
+        }
+
+        // Footer
+        const footerEl = document.getElementById('site-footer');
+        if (footerEl) {
+            const footer = data.footer || {};
+            footerEl.innerHTML = `
+                <p>${escapeHTML(footer.copyright || '© 2026 Jack Schafer')}</p>
+            `;
         }
     }
 
@@ -421,6 +606,9 @@ const PortfolioRenderer = (() => {
             }
 
             switch (page) {
+                case 'about':
+                    renderAbout(data);
+                    break;
                 case 'home':
                     renderHome(data);
                     break;

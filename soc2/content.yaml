@@ -1,43 +1,53 @@
 # ============================================================================
-# SOC 2 Case Study — Content Configuration
-# Edit this file to update all content on the case study page.
+# SOC 2 Case Study — Content Configuration (STAR Format)
 # ============================================================================
 
 meta:
   title: "Crisis-Resilient SOC 2 Type II"
-  subtitle: "Zero Exceptions, Zero C-Suite: Delivering SOC 2 Type II During a RIF"
-  back_link: "../"
-  back_label: "← Back to Portfolio"
+  hero_image: "hero.png"
+  hero_statement: "Achieved a flawless zero-exception SOC 2 Type II report on the first attempt — during a company-wide crisis."
+  tags: ["CRISIS LEADERSHIP", "SOC 2", "TEAM CULTURE"]
+  back_link: "../portfolio/"
+  back_label: "← Back to Projects"
 
-# ============================================================================
-# Sections — Each renders as a narrative block on the page.
-# ============================================================================
+nav:
+  links:
+    - label: "About"
+      href: "/"
+    - label: "Portfolio"
+      href: "/portfolio/"
+
 sections:
-  - id: challenge
-    phase: "01"
-    title: 'The Challenge: The "Perfect Storm"'
+  - id: situation
+    title: "Situation"
     paragraphs:
       - heading: "The Stakes"
         body: "We entered a critical partnership contingent on producing a SOC 2 Type II report for three distinct products on an accelerated timeline."
       - heading: "The Crisis"
         body: "Just before the observation period began, the organization underwent a Reduction in Force (RIF), resulting in the loss of the CTO and key product team members."
-      - heading: "The Gap"
-        body: 'We faced a "Leadership Vacuum." The technical visionaries were gone, morale was cratering, and the audit deadline remained fixed. The team was being asked to do more work with less guidance and higher emotional stress.'
+      - heading: "The Leadership Vacuum"
+        body: 'The technical visionaries were gone, morale was cratering, and the audit deadline remained fixed. The team was being asked to do more work with less guidance and higher emotional stress.'
 
-  - id: intervention
-    phase: "02"
-    title: "The Intervention: Operational Shielding & Radical Empathy"
+  - id: task
+    title: "Task"
+    paragraphs:
+      - heading: "The Mandate"
+        body: "Deliver a zero-exception SOC 2 Type II report across three SaaS products on an immovable deadline — with a diminished, demoralized team and no executive technical leadership."
+      - heading: "The Dual Challenge"
+        body: "Success required solving two problems simultaneously: stabilize team morale to prevent further attrition, and maintain audit evidence collection quality despite the loss of institutional knowledge."
+
+  - id: action
+    title: "Action"
     paragraphs:
       - heading: "Stabilizing the Human Element"
         body: 'Recognizing that anxiety was the biggest risk to the audit, I shifted my management style to "High-Touch." I instituted check-ins that prioritized mental well-being over status updates, creating a psychological safe space for the team to vent and decompress.'
       - heading: "Operational Shielding"
-        body: 'I didn't just ask for status; I actively removed friction. I renegotiated workloads and reprioritized non-audit tasks to create breathing room, effectively acting as a "shield" so the remaining engineers could focus without distraction.'
+        body: 'I didn''t just ask for status; I actively removed friction. I renegotiated workloads and reprioritized non-audit tasks to create breathing room, effectively acting as a "shield" so the remaining engineers could focus without distraction.'
       - heading: "Cross-Functional Coordination"
         body: "With the CTO gone, I stepped in to bridge the gap between product, engineering, and the auditors. I translated audit requirements into bite-sized technical tasks, ensuring evidence collection continued seamlessly despite the loss of institutional knowledge."
 
-  - id: outcome
-    phase: "03"
-    title: "The Outcome: Sustainable Excellence"
+  - id: result
+    title: "Result"
     paragraphs:
       - heading: "Immediate Win"
         body: "We achieved a flawless SOC 2 Type II report with zero exceptions on our very first attempt — a rarity even for fully staffed teams, let alone those in crisis."

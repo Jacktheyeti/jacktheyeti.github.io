@@ -1,0 +1,94 @@
+# About Page — Content Configuration
+profile:
+  name: "Jack Schafer"
+  title: "Director of Security Operations"
+  credentials: "CISSP"
+  company: ""
+  location: "Maine, USA"
+  photo: "https://media.licdn.com/dms/image/v2/D4E03AQF9bofe6uRWdw/profile-displayphoto-shrink_400_400/B4EZOIjybmGQAk-/0/1733162904524?e=1773273600&v=beta&t=hNqrNJ2_DVfbJbWVLBvqIjWo8mT0V71Ov3pu6x8ErnI"
+  linkedin: "https://www.linkedin.com/in/jack-schafer-cissp-aa091695/"
+  email: "jackschafer3@gmail.com"
+  resume: "#"
+
+intro: "CISSP certified Information Security profressional with 10+ years of experience specializing in building and maintaining security programs and operations. I excel at balancing strategic leadership with hands on execution to build effective, compliant security programs that align with business goals."
+
+# Accomplishments — Top 3 with quantifiable metrics
+
+accomplishments:
+  - id: soc2
+    metric: "0 Exceptions"
+    label: "SOC 2 Type II - First Attempt"
+    description: "Delivered a flawless SOC 2 Type II report during a leadership vacuum following a RIF. Sustained zero-exception results across consecutive audit cycles."
+    link: "/soc2/"
+    link_label: "Review Project →"
+
+  - id: iso27001
+    metric: "12 → 3 Months"
+    label: "ISO 27001 Acceleration"
+    description: "Transformed a stalled 12-month compliance initiative into a functioning security program within a single quarter by bridging DevOps culture with audit requirements."
+    link: "/iso27001/"
+    link_label: "Review Project →"
+
+  - id: culture
+    metric: "100% Shift"
+    label: "Culture Transformation"
+    description: "Dismantled a toxic 'Department of No' culture and replaced fear with trust. Users now proactively consult the security team before acting."
+    link: "/culture/"
+    link_label: "Review Project →"
+
+# Timeline — Professional experience, most recent first
+
+timeline:
+  - title: "Director of Security Operations"
+    company: "ELB Learning (Formerly The Game Agency)"
+    dates: "2023 — Present"
+    story: "Today, I blend strategic oversight with hands-on execution. I lean on the relationships I've forged to ensure our cybersecurity practices don't just protect the business, they enable it."
+    highlights:
+      - "Directed security strategy and team operations, securing consecutive zero-exception SOC 2 reports and influencing millions in revenue."
+      - "Launched a gamified security awareness pilot for 400+ global employees, boosting engagement by 109%."
+      - "Lead quarterly executive reviews to advise leadership on security risk, posture, and mitigation strategies."
+
+  - title: "Security Manager"
+    company: "ELB Learning (Formerly The Game Agency)"
+    dates: "2023 - 2024"
+    story: "Transitioning into formal management, my focus shifted from building localized IT solutions to scaling enterprise wide, 'world class' security and compliance frameworks that could support global operations."
+    highlights:
+      - "Managed global SOC 2 Type II compliance for 3 SaaS products, achieving a zero-exception audit report."
+      - "Refined SIEM rules using a risk-based approach, reducing alert fatigue and improving detection and response by 93%."
+      - "Executed a zero-downtime Google Workspace migration for 50+ employees during corporate acquisition."
+
+  - title: "Data Security Analyst"
+    company: "ELB Learning (Formerly The Game Agency)"
+    dates: "2020 — 2023"
+    story: "The Game Agency was acquired by ELB Learning and this was a massive transition period for both companies. ELB Learning has acquired and was acquiring more companies, each unique and at the same time trying to centralize its operations and establish an ISMS to be certified against ISO27001:2022"
+    highlights:
+      - "Developed a 'Security Kit' (policies, SIG Lites, CAIQ, white papers) to accelerate customer risk assessments."
+      - "Maintained compliance with Microsoft's Data Protection Requirements, securing $1.3M in continued business."
+      - "Partnered with DevOps to revive ISO 27001 implementation, successfully establishing the company's ISMS."
+
+  - title: "Data Security Analyst"
+    company: "ELB Learning (Formerly The Game Agency)"
+    dates: "2016 — 2020"
+    story: "As the company grew, so did the complexity of the systems and the need to protect them. Because I was eager to learn and willing to wear any hat, I naturally gravitated towards building the security posture from the ground up."
+    highlights:
+      - "Built the logging, alerting, and dashboard infrastructure to safeguard a $20M digital inventory system."
+      - "Co-authored security policies and collaborated with an external firm to implement a formal IS program (IR, BCDR, and training)."
+      - "Created PowerBI dashboards to trace 5% of network traffic to fraudulent VPN/Proxy use, driving the development of a custom IP intelligence service."
+
+  - title: "Associate Technical Producer"
+    company: "ELB Learning (Formerly The Game Agency)"
+    dates: "2014 — 2016"
+    story: "Fresh out of college with a degree in Behavioral Neuroscience, my career kicked off unexpectedly in Stamford, CT. I was helping a small startup, The Game Agency, assemble office furniture as they were growing. A casual conversation about teaching myself to program through Youtube netted me an opportunity in quality assurance."
+    highlights:
+      - "Transitioned from assembling office furniture to testing and disassembling web applications."
+      - "Assumed ownership of corporate IT assets, managing hardware and software provisioning for 14 employees."
+      - "Collaborated with a cybersecurity firm to configure the first corporate firewall and monitoring toolset."
+footer:
+  copyright: "© 2026 Jack Schafer. Content sanitized for public viewing."
+
+nav:
+  links:
+    - label: "About"
+      href: "/"
+    - label: "Portfolio"
+      href: "/portfolio/"

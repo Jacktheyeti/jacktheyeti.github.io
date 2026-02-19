@@ -1,34 +1,45 @@
 # ============================================================================
-# ISO 27001 Case Study — Content Configuration
-# All narrative content for the case study page.
+# ISO 27001 Case Study — Content Configuration (STAR Format)
 # ============================================================================
 
 meta:
-  title: "Accelerating ISO 27001"
-  subtitle: "Operationalizing Compliance in a Stalled Environment"
-  back_link: "../"
-  back_label: "← Back to Portfolio"
+  title: "Operationalizing ISO 27001"
+  hero_image: "hero.png"
+  hero_statement: "Transformed a stalled 12-month compliance initiative into a functioning security program within a single quarter."
+  tags: ["CHANGE MANAGEMENT", "GRC", "SECOPS"]
+  back_link: "../portfolio/"
+  back_label: "← Back to Projects"
 
-# ============================================================================
-# Sections — Each renders as a narrative block on the page
-# ============================================================================
+nav:
+  links:
+    - label: "About"
+      href: "/"
+    - label: "Portfolio"
+      href: "/portfolio/"
+
 sections:
-  - id: challenge
-    phase: "01"
-    title: "The Challenge: The Year of Spin"
+  - id: situation
+    title: "Situation"
     paragraphs:
       - heading: "Context"
         body: "Following an acquisition, I stepped into an ongoing ISO 27001:2022 initiative that had been active for 12 months."
       - heading: "The Friction"
         body: "Despite a year of effort, the project was stalled. The team was siloed, frustrated, and suffering from compliance fatigue."
-      - heading: "The Gap"
+      - heading: "The Root Cause"
         body: "The initiative was being led by DevOps engineers — highly technical talent that was bogged down by the administrative weight of ISO requirements, lacking the project management structure to make efficient progress."
       - heading: "Personal Constraint"
         body: 'As the "new guy" post-acquisition, I had no initial social capital and needed to learn the specific ISO 27001:2022 framework rapidly while building trust.'
 
-  - id: intervention
-    phase: "02"
-    title: "The Intervention: Listen, Align, Then Lead"
+  - id: task
+    title: "Task"
+    paragraphs:
+      - heading: "The Mandate"
+        body: "Unblock the stalled ISO 27001 certification effort and operationalize a functioning Information Security Management System (ISMS) — without formal authority or pre-existing relationships."
+      - heading: "The Constraint"
+        body: "Bridge two fundamentally different cultures — fast-moving DevOps and methodical audit governance — while earning the trust of a frustrated team that had been spinning for a year."
+
+  - id: action
+    title: "Action"
     paragraphs:
       - heading: "Phase 1 — Observation & Empathy"
         body: "Instead of asserting immediate authority, I joined calls strictly to listen. I identified that the engineers viewed compliance as an obstruction rather than a process."
@@ -40,9 +51,8 @@ sections:
       - heading: "Phase 3 — Operationalizing the PDCA Cycle"
         body: "Once trust was established, I took ownership of the program. We moved from theoretical discussions to implementing key controls and scheduling internal audits, effectively jumpstarting the Plan-Do-Check-Act (PDCA) cycle required by the standard."
 
-  - id: outcome
-    phase: "03"
-    title: "The Outcome: Velocity over Vanity"
+  - id: result
+    title: "Result"
     paragraphs:
       - heading: "The Metric"
         body: "In just a few months, the team achieved more tangible progress on controls and audit readiness than in the previous year combined."

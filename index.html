@@ -4,49 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jack Schafer | Security Operations Portfolio</title>
+    <title>Jack Schafer | Security Operations Leader</title>
     <meta name="description"
-        content="Security Operations portfolio showcasing GRC, security awareness training, and vulnerability management capabilities.">
+        content="Director of Security Operations specializing in GRC, security awareness, and vulnerability management. CISSP certified.">
     <link rel="stylesheet" href="shared/theme.css">
 </head>
 
 <body>
 
-    <header class="site-header" id="site-header">
-        <!-- Rendered from portfolio.yaml -->
-    </header>
+    <nav id="site-nav">
+        <!-- Rendered by renderer.js -->
+    </nav>
 
+    <!-- ─── Profile Section ─── -->
+    <section class="profile" id="profile">
+        <!-- Rendered from about.yaml -->
+    </section>
+
+    <!-- ─── Intro / Summary ─── -->
     <div class="container">
-        <div class="intro" id="site-intro">
-            <!-- Rendered from portfolio.yaml -->
+        <div class="about-intro" id="about-intro">
+            <!-- Rendered from about.yaml -->
         </div>
 
-        <!-- Section 1: Strategic Initiatives & Case Studies -->
-        <div class="section-title" id="section1-title">
-            <!-- Rendered from portfolio.yaml -->
+        <!-- ─── Key Accomplishments ─── -->
+        <div class="section-title" id="accomplishments-title">Key Accomplishments</div>
+
+        <div class="accomplishments-grid" id="accomplishments-grid">
+            <!-- Rendered from about.yaml -->
+        </div>
+        <!-- ─── CTA ─── -->
+        <a href="/portfolio/" class="btn btn--filled cta-banner__btn">View My Full Portfolio →</a>
+        <!-- ─── Professional Timeline ─── -->
+        <div class="section-title" id="timeline-title" style="margin-top: 4rem;">Professional Journey</div>
+
+        <div class="timeline" id="timeline">
+            <!-- Rendered from about.yaml -->
         </div>
 
-        <div class="grid" id="initiatives-grid">
-            <!-- Rendered from portfolio.yaml -->
-        </div>
-
-        <!-- Section 2: Technical Artifacts & Tools -->
-        <div class="section-title" id="section2-title" style="margin-top: 4rem;">
-            <!-- Rendered from portfolio.yaml -->
-        </div>
-
-        <div class="grid" id="projects-grid">
-            <!-- Rendered from portfolio.yaml -->
-        </div>
     </div>
 
     <footer class="site-footer" id="site-footer">
-        <!-- Rendered from portfolio.yaml -->
+        <!-- Rendered from about.yaml -->
     </footer>
 
     <script src="shared/renderer.js"></script>
     <script>
-        PortfolioRenderer.init({ config: 'portfolio.yaml', page: 'home' });
+        PortfolioRenderer.init({ config: 'about.yaml', page: 'about' });
     </script>
 
 </body>
