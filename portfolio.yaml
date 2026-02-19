@@ -26,6 +26,13 @@ initiatives:
     description: 'Led a diminished team through a high-stakes audit immediately following the loss of the CTO. Achieved a zero exception report on the first attempt by prioritizing morale and operational shielding.'
     link: "/soc2/"
     link_label: "View Case Study"
+
+  - id: culture
+    title: "Culture Shift: The Department of Yes"
+    tags: ["LEADERSHIP", "CULTURE", "PSYCHOLOGICAL SAFETY"]
+    description: 'Dismantled a toxic "Department of No" culture by introducing radical empathy and service leadership. Transformed the security team from a friction point into a trusted partner.'
+    link: "/culture/"
+    link_label: "View Case Study"
 projects:
   - id: bytesized
     title: "ByteSized Security Training"

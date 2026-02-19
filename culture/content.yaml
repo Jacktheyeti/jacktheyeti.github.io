@@ -1,0 +1,48 @@
+# ============================================================================
+# Culture Shift Case Study — Content Configuration
+# Edit this file to update all content on the case study page.
+# ============================================================================
+
+meta:
+  title: "Building a Culture of Psychological Safety"
+  subtitle: "Dismantling the \"Department of No\""
+  back_link: "../"
+  back_label: "← Back to Portfolio"
+
+# ============================================================================
+# Sections — Each renders as a narrative block on the page.
+# ============================================================================
+sections:
+  - id: challenge
+    phase: "01"
+    title: 'The Challenge: The "Name and Blame" Trap'
+    paragraphs:
+      - heading: "The Toxic Norm"
+        body: 'The IT and DevOps teams operated under a legacy culture of "Name and Blame." They were viewed as the "Department of No" — dismissive, impatient, and often hostile to end-users who made mistakes.'
+      - heading: "The Consequence"
+        body: 'This friction caused a dangerous silence. Users were terrified to report errors or ask questions, leading to "Shadow IT" and suppressed incident reporting.'
+      - heading: "The Goal"
+        body: 'To transform the security function from a punitive "policing" body into a supportive "consulting" partner.'
+
+  - id: intervention
+    phase: "02"
+    title: "The Intervention: Leading with Radical Empathy"
+    paragraphs:
+      - heading: "Modeling Vulnerability"
+        body: 'I realized that culture flows from the top. I stopped defending broken processes and started "owning" them. When things went wrong, I approached the team with curiosity ("How can I serve you better?") rather than judgment.'
+      - heading: 'The "Litmus Test" (The Phishing Incident)'
+        body: 'The true test came during a compromised email incident where a user reported the breach a week late due to fear of retribution.'
+      - heading: "The Response"
+        body: 'Instead of the typical "irate IT" response, I guided the senior engineers to respond with grace. We normalized the error ("It happens to everyone") and framed the late reporting as a learning opportunity, not a punishable offense. We thanked the user for coming forward at all.'
+
+  - id: outcome
+    phase: "03"
+    title: 'The Outcome: From "Policing" to "Partnership"'
+    paragraphs:
+      - heading: "Behavioral Shift"
+        body: "The technical team successfully de-escalated a critical incident without alienation. The user became an advocate rather than a victim."
+      - heading: 'The "Knock on the Door" Metric'
+        body: 'The most significant win is the shift in engagement. We are no longer just receiving "incident reports" (reactive); we are now fielding "consultation requests" (proactive).'
+      - heading: "The Legacy"
+        body: "Employees now approach the security team before they act — asking for advice on data deletion or tool selection — proving that we successfully replaced fear with trust."
+        highlight: true
